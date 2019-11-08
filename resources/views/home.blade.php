@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,10 +14,15 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    You are logged as: {{ Auth::user()->name }}
+                    @foreach($notes as $note)
+                      <h2>{{$note->data_event}}</h2>
+                      <div>{{Str::limit($note->content, 200)}}</div>
+                    @endforeach
                 </div>
+
             </div>
         </div>
     </div>
-</div>
+
 @endsection
