@@ -86,8 +86,12 @@ class NoteController extends Controller
      * @param  \App\Note  $note
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user, Note $note)
+    public function destroy($id)
     {
-        //
+      $note = Note::find($id);
+      if ($note) {
+        $article->delete();
+      }
+      return redirect()->route('home');
     }
 }

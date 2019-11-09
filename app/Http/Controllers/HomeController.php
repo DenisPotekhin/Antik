@@ -26,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $notes =  Note::where('user_id', Auth::user()->id)->get();
+        $notes =  Note::where('user_id', Auth::user()->id)->orderBy('data_event', 'asc')->get();
         //$notes =  Auth::user()->notes();
         return view('home', compact('notes'));
     }
