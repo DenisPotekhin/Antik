@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+
+<div class="container" id="app">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -11,6 +12,8 @@
                             {{ session('status') }}
                         </div>
                     @endif
+
+                    <vuejs-datepicker :inline="true" v-model="openDate"></vuejs-datepicker>
                     <h2>Notes on {{date("Y-m-d")}}</h2>
                     @foreach($notes as $note)
                       <div>{{Str::limit($note->content, 200)}}</div>
@@ -21,10 +24,7 @@
             </div>
         </div>
 
-    <div id="app">
-      <vuejs-datepicker :inline="true"></vuejs-datepicker>
     </div>
-    <datepicker placeholder="Select Date"></datepicker>
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/vuejs-datepicker"></script>
     <script>

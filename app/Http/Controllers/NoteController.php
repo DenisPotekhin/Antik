@@ -88,9 +88,9 @@ class NoteController extends Controller
      */
     public function destroy($id)
     {
-      $note = Note::find($id);
+      $note = Note::find(6);
       if ($note) {
-        $article->delete();
+        $note->delete();
       }
       return redirect()->route('home');
     }

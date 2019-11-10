@@ -19,5 +19,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::delete('/home', 'NoteController@destroy')
-  ->name('notes.destroy');
+Route::delete('/home', 'NoteController@destroy')->name('notes.destroy');

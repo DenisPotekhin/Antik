@@ -30,4 +30,5 @@ class HomeController extends Controller
         //$notes =  Auth::user()->notes();
         return view('home', compact('notes'));
     }
+
 }
